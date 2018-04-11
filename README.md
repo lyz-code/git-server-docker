@@ -1,4 +1,7 @@
 # git-server-docker
+
+**This is a fork of the original repository to convert it to ARM architecture**
+
 A lightweight Git Server Docker image built with Alpine Linux. Available on [GitHub](https://github.com/jkarlosb/git-server-docker) and [Docker Hub](https://hub.docker.com/r/jkarlos/git-server-docker/)
 
 !["image git server docker" "git server docker"](https://raw.githubusercontent.com/jkarlosb/git-server-docker/master/git-server-docker.jpg)
@@ -11,12 +14,12 @@ How to run the container in port 2222 with two volumes: keys volume for public k
 
 How to use a public key:
 
-    Copy them to keys folder: 
+    Copy them to keys folder:
 	- From host: $ cp ~/.ssh/id_rsa.pub ~/git-server/keys
 	- From remote: $ scp ~/.ssh/id_rsa.pub user@host:~/git-server/keys
 	You need restart the container when keys are updated:
 	$ docker restart <container-id>
-	
+
 How to check that container works (you must to have a key):
 
 	$ ssh git@<ip-docker-server> -p 2222
@@ -68,7 +71,7 @@ How upload quickly a public key to host volume:
 How to make the image:
 
 	$ docker build -t git-server-docker .
-	
+
 ### Docker-Compose
 
 You can edit docker-compose.yml and run this container with docker-compose:
